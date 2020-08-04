@@ -1,0 +1,19 @@
+https://mkyong.com/maven/how-to-tell-maven-to-use-java-8/
+http://extentreports.com/docs/versions/4/java/
+https://mvnrepository.com/artifact/com.aventstack/extentreports/4.0.9
+
+1.Create maven project fw structure generation
+2.Build Appium tests into the Project
+3.Develope a plan to define global properties for Appium Desired Capabilities
+4.Make the tests TESTNG compatible to utilize the features of the TESTNG FW
+5.Develope Page Object design pattern for the tests so that the object should not stay in the Testcases
+6.Develope Appium custom utilities to avoid duplicate code
+7.Build utilities to Start and Stop Appium server programmatically
+8.Give a knowlegde to framework to invoke Emulator on the fly if Virtual Device option is selected
+9.Build TestNG listeners to capture ss on Test failures
+10.Generate excellent Client-side reports on test results with graphs
+11.Implement data driven and parameterization mechanism to drive Test data externally into tests
+12.Integrate FW repo into jenkins cli
+13.Parameterize the Jenkins buildso that user have the option to select Mobile device which needs to run tests for that specific build
+14.Push your framework into git repository
+Done!!!

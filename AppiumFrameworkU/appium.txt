@@ -1,0 +1,87 @@
+ capabilities.setCapability("deviceName", "Micromax A311");-
+ capabilities.setCapability("platformVersion", "4.4.2");-
+ capabilities.setCapability("platformName", "Android");-
+ capabilities.setCapability("app", app.getAbsolutePath());-
+ capabilities.setCapability("appPackage", "in.amazon.mShop.android.shopping");
+ capabilities.setCapability("appActivity", "com.amazon.mShop.home.HomeActivity")
+
+aapt.exe dump badging
+http://www.aftvnews.com/how-to-determine-the-package-name-of-an-android-app/
+https://www.toolsqa.com/mobile-automation/appium/appium-test-using-testng/
+http://www.automationtestinghub.com/3-ways-to-start-appium-server-from-java/
+http://www.automationtestinghub.com/appium-desktop-inspector/
+http://www.automationtestinghub.com/appium-desktop-inspector-inspect-mobile-elements/
+
+
+to find the package and activity
+adb shell
+dumpsys window windows | grep -E ‘mCurrentFocus|mFocusedApp’
+
+
+platformName=Android
+#platformVersion=9 PKQ1.180729.001
+platformVersion=9.0
+deviceName=AY POCO F1
+apkPath=E:/java_workspace/easydayFW/src/test/resources/easydayapps/FutureCapp-1.2.2-RC1-qa-7d3ef44a-c2bd-4d62-9ba0-d4ff19c2c454.apk
+appPackage=in.pkd.easyday.futuregroup
+appActivity=future.feature.main.MainActivity
+
+
+{
+  "platformName": "Android",
+  "platformVersion": "9",
+  "deviceName": "AY POCO F1",
+  "apkPath": "E:/java_workspace/easydayFW/src/test/resources/easydayapps/FutureCapp-1.2.2-RC1-qa-7d3ef44a-c2bd-4d62-9ba0-d4ff19c2c454.apk",
+  "appPackage": "in.pkd.easyday.futuregroup.qa",
+  "appActivity": "future.feature.main.MainActivity"
+}
+
+
+in.pkd.easyday.futuregroup.qa
+future.feature.main.MainActivity
+
+.//*[@id='in.pkd.easyday.futuregroup.qa:id/flow_root]//*[contains(text(),'Fruits & Vegetables')]
+
+//*[@id='in.pkd.easyday.futuregroup.qa:id/search_tv'[Search your favourite product…
+
+//*[contains(text(),'Search your favourite product')]
+
+//*[@id='in.pkd.easyday.futuregroup:id/item_text' and text()='Bakery & Dairy']
+
+//[@class="android.widget.TextView" and resource-id="in.pkd.easyday.futuregroup:id/item_text" and text()="Bakery & Dairy"]
+
+//android.widget.TextView[@text='Bakery & Dairy']
+//android.widget.TextView[@resource-id='in.pkd.easyday.futuregroup.qa:id/item_text']
+
+//android.widget.TextView[@resource-id='in.pkd.easyday.futuregroup.qa:id/item_text' and @text='Fruits & Vegetables']
+//android.widget.TextView[contains(@resource-id,'in.pkd.easyday.futuregroup.qa:id/item_text') and @text='Fruits & Vegetables']
+
+//android.widget.TextView[contains(@resource-id,'in.pkd.easyday.futuregroup.qa:id/item_text') and @text='Fruits & Vegetables']
+String categoryXpath="//android.widget.TextView[contains(@resource-id,'in.pkd.easyday.futuregroup.qa:id/item_text') and @text='"+category+"']";
+
+//android.widget.TextView[contains(@text,'Search your favourite product')]
+reporter in (Ayesha.Yusuf) and type in ('Improvement','Enhancements')
+
+//android.widget.EditText[contains(@text,'What would you like to buy today?')]
+
+//android.widget.Button[@resource-id='in.pkd.easyday.futuregroup.qa:id/btn_add_to_cart'  and @index='0']
+//android.widget.Button[@text='Add']
+
+//android.widget.Button[@resource-id='in.pkd.easyday.futuregroup.qa:id/btn_add_to_cart']
+
+//android.widget.TextView[@text='097410 77488']
+
+//android.widget.RelativeLayout[@resource-id='in.pkd.easyday.futuregroup.qa:id/rl_cart']
+
+1.Testcases convering edge cases and coverage
+2.Log improvements in jira or mail
+3.Take more ownership of work like work on other apps
+4.Learn new tools one for UI automation, Perfomance tool, AT & T Video Optimizer, monkeyrunner, GPU Over draw, Battery storian, Tripen
+5.Help Others
+6.Raise all bugs at the beginning of the test cycle
+7.Execute more then what is required, execute just adequate
+==============================================
+https://community.tealiumiq.com/t5/Tealium-for-Android/Setting-up-Charles-to-Proxy-your-Android-Device/ta-p/5121
+https://null-byte.wonderhowto.com/how-to/use-charles-proxy-view-data-your-mobile-apps-send-receive-0185364/
+http://help.testlio.com/testing-with-testlio/capturing-network-logs/charles-proxy-guide-for-android
+https://blog.testproject.io/2018/07/31/page-object-model-appium-java-android/

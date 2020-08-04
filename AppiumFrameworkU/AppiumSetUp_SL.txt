@@ -1,0 +1,205 @@
+https://www.edgewordstraining.co.uk/2017/07/05/install-appium-server-windows/
+
+1)Install java
+C:\Users\450520>java -version
+java version "1.8.0_211"
+Java(TM) SE Runtime Environment (build 1.8.0_211-b12)
+Java HotSpot(TM) 64-Bit Server VM (build 25.211-b12, mixed mode)
+
+2)Update the following environment in the Advanced System settings
+a)Add the JAVA_HOME
+C:\Program Files\Java\jdk1.8.0_211
+
+b)Update the Path environment variable with the following:
+%JAVA_HOME%\
+%JAVA_HOME%\bin
+
+3)Download the Android Studio from https://developer.android.com/studio(Version 3.4.1 for Windows 64-bit (971 MB))
+
+4)Install Android Studio with the default settings
+
+5)Configure dropdown->SDK Manager and check the Android Version SDKs that you want to download and wait till all the checked SDKs are downloaded
+
+6)Create a new Project in Android Studio, once the build is completed successfully, create an Emulator
+AVD Manager->
+Create Virtual Device->
+Select Device->Pixel XL->
+Select a system image->Click on the Android OS Image Name link to be downloaded(Oreo, API Level 27)-> Click on finish when its Image is completely downloaded
+Click on the Next button->
+Enter an AVD Name->Demo Emulator Pixel XL API 27
+Finish Button->
+A new emulator gets created called "Demo Emulator Pixel XL API 27" and is listed in AVD Device Manager->Your Virtual Devices->
+Tap on the Play button to launch the newly created emulator->
+
+7)
+a)On typing adb devices in the command prompt, the emulator which is created and launched "Demo Emulator Pixel XL API 27" is listed with its internal name 
+"emulator-5554"
+
+C:\Users\450520>adb devices
+List of devices attached
+emulator-5554   device 
+
+b)On connecting your device and then typing adb devices if you see unauthorized then you need to accept the adb from accessing your device in your mobile
+then it will show
+
+i)C:\Users\450520>adb devices
+List of devices attached
+emulator-5554   device 
+add5aa81	unathorized
+
+ii)C:\Users\450520>adb devices
+List of devices attached
+emulator-5554   device 
+add5aa81	device
+
+5)Add the following environment variables
+a)ANDROID_HOME= C:\Users\450520\AppData\Local\Android\Sdk 
+
+b)Update the Path with the following 
+%ANDROID_HOME%\tools
+%ANDROID_HOME%\platform-tools
+
+6)Download Nodejs from https://nodejs.org/en/download/current/
+
+7)Install NodeJs
+https://www.journaldev.com/7402/node-js-environment-setup-node-js-installation
+http://testpyramid.com.au/install-verify-node-js-npm-windows-10-step-step-guide/
+
+8)
+a)Create new environment variable NODE_HOME -> C:\Program Files\nodejs
+b)Update the existing variable Path ->  %NODE_HOME%\node_modules\npm\bin
+
+9)Check that Nodejs is installed properly
+C:\Users\450520>node -v
+v12.4.0
+
+10)Check that npm is installed properly
+
+Note:npm (originally short for Node Package Manager) is a package manager for the JavaScript programming language
+
+C:\Users\450520>npm -v
+6.9.0 
+
+11)Download Appium Server from  Node
+C:\Users\450520>npm install -g appium
+=======================================================
++ appium@1.13.0
+added 584 packages from 402 contributors in 69.835s
+=======================================================
+
+12)To start Appium Server
+C:\Users\450520>appium
+[Appium] Welcome to Appium v1.13.0
+[Appium] Appium REST http interface listener started on 0.0.0.0:4723
+
+13)To stop Appium Server CTRL+c
+
+10)Download the common language jar from apache 
+http://commons.apache.org/proper/commons-lang/download_lang.cgi
+
+Android Studio->3.4.1
+Appium Client Jar->7.0
+Selenium Jar->3.1
+
+==========
+https://www.edgewordstraining.co.uk/2017/07/05/install-appium-server-windows/
+
+npm commands
+===========
+npm uninstall -g appium
+npm install -g appium@1.6
+
+
+C:\Users\450520>adb uninstall io.appium.uiautomator2.server
+C:\Users\450520>adb uninstall io.appium.uiautomator2.server.test
+
+https://gopekannan.wordpress.com/2017/01/11/how-to-identify-an-android-apks-package-and-activity-name/
+To get the package of the apk:adb shell pm list packages -3 -f
+adb shell "dumpsys window windows | grep –E 'mCurrentFocus'"
+
+adb shell am start -W -n com.livquik.future.fpdroid/.com.livquik.future.fpdroid.ui.view.walkthrough.WalkthroughActivity -S -a android.intent.action.MAIN -c android.intent.category.LAUNCHER -f 0x10200000
+
+To Launch UIAutomator C:\Users\450520\AppData\Local\Android\Sdk\tools\bin
+
+Comments from Saqib:
+1.Remove the PROD related elements and functions - in progress
+2.abstract class for common elements across the app - 
+3.Add hard assertions only for existance of elements - 
+4.Add soft assertions to compare text 
+5.To check if the page has loaded only after which to perform any operations
+
+ADB
+https://developer.android.com/studio/command-line/adb
+https://www.toolsqa.com/mobile-automation/appium/adb-commands/
+
+1)To list all the devices
+adb devices -l
+C:\Users\450520>adb  devices -l
+List of devices attached
+add5aa81               device product:beryllium model:POCO_F1 device:beryllium transport_id:1
+
+2)To list all the emulators
+C:\Users\450520>emulator -list-avds
+Demo_Emulator_Pixel_XL_API_27
+Demo_Pixel_XL_API_28
+
+3)To install an apk in your mobile device
+C:\Users\450520>adb install C:\Users\450520\Downloads\FutureCapp-1.3.2-RC19-qa.apk
+Performing Streamed Install
+Success
+
+4)To install a test apk in your mobile device
+C:\Users\450520>adb install -t C:\Users\450520\Downloads\FutureCapp-1.3.2-RC19-qa.apk
+Performing Streamed Install
+Success
+
+5)To install an apk in the emulator
+adb devices 
+--> It will give list of devices running by your SDK --> If there is only one device...use this command
+adb install ".apk"
+
+--> If there are multiple devices running then you need to select the emulator
+C:\Users\450520>adb devices
+List of devices attached
+add5aa81        device
+emulator-5554   device
+
+adb -s emulator-5556 install "C:\Users\450520\Downloads\FutureCapp-1.3.2-RC19-qa.apk"
+C:\Users\450520\AppData\Local\Android\Sdk\platform-tools>adb install C:\Users\450520\Downloads\General-Store.apk
+
+6)To copy a file or directory and its sub-directories from the device, do the following:
+adb pull remote local
+
+7a)To see the logs on the console for debugging
+adb logcat
+
+7b)To create a log file and store the logs in that for debugging 
+C:\Users\450520>adb logcat > "E:\log.txt"
+
+
+8)To push a file from the local to the mobile device
+C:\Users\450520>adb push "C:\Users\450520\Downloads\user_login.jpg" "/sdcard/Download"
+C:\Users\450520\Downloads\user_login.jpg: 1 file pushed. 1.7 MB/s (33673 bytes in 0.019s)
+
+9)To pull a file from the mobile device to the local
+
+How to launch UIAutomator?
+https://stackoverflow.com/questions/50015549/uiautomatorviewer-is-giving-error-swt-folder-lib-location-of-your-java-inst
+http://www.automationtestinghub.com/appium-scroll-examples/
+https://gist.github.com/Pulimet/5013acf2cd5b28e55036c82c91bd56d8#file-adbcommands-L66
+https://discuss.appium.io/t/how-to-handle-app-permission-pop-ups-system-popups-like-device-location-contact-list-in-appium-android-tests-for-os-marshmallow-and-above/11709
+To switch from android app to webview
+https://discuss.appium.io/t/how-to-switch-context-from-native-to-webview/14651
+https://discuss.appium.io/t/appium-only-show-native-app-context-is-does-not-recognises-the-webview-context-for-android-app/348
+https://discuss.appium.io/t/cant-switch-context-to-webview/4539/29
+https://discuss.appium.io/t/how-to-identify-webview-elements-in-android-hybrid-app/5140/36
+https://stackoverflow.com/questions/54529053/appium-does-not-show-webview-context-it-only-showing-native-app-context-how-to
+https://developer.android.com/reference/android/webkit/WebView.html#setWebContentsDebuggingEnabled(boolean)
+
+To identify the elements in mobile view
+chrome://inspect/#devices
+
+adb devices->unauthorized
+adb kill-server
+adb start-server
+adb devices

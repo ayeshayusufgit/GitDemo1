@@ -1,0 +1,36 @@
+Create maven project fw structure generation
+Build Appium tests into the Project
+Develope a plan to define global properties for Appium Desired Capabilities
+Develope Page Object design pattern for the tests so that the object should not stay in the Testcases
+Make the tests TESTNG compatible to utilize the features of the TESTNG FW
+=======================================================================================================
+The following dependencies have to be added to start and stop the appium server programmatically through java
+slf4j-simple
+slf4j-api
+commons-lang3
+commons-io
+commons-validator
+=======================================================================================================
+Important URLs
+https://mkyong.com/maven/how-to-tell-maven-to-use-java-8/
+https://github.com/appium/java-client/tree/master/src/test/java/io/appium/java_client/android
+http://maven.apache.org/surefire/maven-surefire-plugin/examples/testng.html
+http://extentreports.com/docs/versions/4/java/
+https://mvnrepository.com/artifact/com.aventstack/extentreports/4.0.9
+https://stackoverflow.com/questions/19655184/no-compiler-is-provided-in-this-environment-perhaps-you-are-running-on-a-jre-ra
+http://maven.apache.org/plugins/maven-resources-plugin/examples/filter.html to add the listeners to the pom.xml
+=======================================================================================================
+To stop appium server
+taskkill /F /IM node.exe 
+
+if this "ERROR: The process "node.exe" not found." message is seen that means the appium server is 
+not running 
+===================================
+C:\Users\450520\AppData\Local\Android\Sdk\emulator
+To list the emulators:emulator -list-avds
+To launch the emulator:emulator -avd Pixel_3_XL_API_28_2
+
+Solution to the following error:
+Windows emulator.exe PANIC: Missing emulator engine program for 'x86' CPU
+https://www.stkent.com/2017/08/10/update-your-path-for-the-new-android-emulator-location.html
+https://github.com/cbeust/testng/issues/1458
