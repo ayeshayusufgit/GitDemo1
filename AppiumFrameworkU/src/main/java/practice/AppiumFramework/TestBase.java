@@ -18,6 +18,9 @@ import io.appium.java_client.android.AndroidElement;
 import io.appium.java_client.remote.MobileCapabilityType;
 import io.appium.java_client.service.local.AppiumDriverLocalService;
 
+//Adding 1st comment to this file
+//Adding 2nd comment to this file
+
 public class TestBase {
 	public static AppiumDriverLocalService service;
 	private static AndroidDriver<AndroidElement> driver;
