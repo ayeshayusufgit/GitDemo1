@@ -26,13 +26,21 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 //Adding 6th comment to this file
 //Adding 7th comment to this file
 //Adding for the 2nd person(clone directory)
-//Adding 2nd comment for the 2nd person(clone directory)
-//Adding 3rd comment for the 2nd person(clone directory)
-//Adding 4th comment for the 2nd person(clone directory)
+//Adding 2nd comment for the 2nd person(clone directory)TestBase
+//Adding 3rd comment for the 2nd person(clone directory)TestBase
+//Adding 4th comment for the 2nd person(clone directory)TestBase
 
 public class TestBase {
 	public static AppiumDriverLocalService service;
 	private static AndroidDriver<AndroidElement> driver;
+
+	public void testDemo1() {
+		System.out.println("Demo1");
+	}
+
+	public void testDemo2() {
+		System.out.println("Demo2");
+	}
 
 	public static void startEmulator() {
 		try {
@@ -98,7 +106,7 @@ public class TestBase {
 		/*
 		 * if (device.contains("Emulator")) { startEmulator(); }
 		 */
-		
+
 		cap.setCapability(MobileCapabilityType.DEVICE_NAME, device);
 		// cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Android Device");
 		// cap.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel_3_XL_API_28_2");
