@@ -26,6 +26,8 @@ import io.appium.java_client.service.local.AppiumDriverLocalService;
 //Adding 6th comment to this file
 //Adding 7th comment to this file
 //Adding for the 2nd person(clone directory)
+//Adding 2nd comment for the 2nd person(clone directory)
+//Adding 3rd comment for the 2nd person(clone directory)
 
 public class TestBase {
 	public static AppiumDriverLocalService service;
